@@ -1,0 +1,147 @@
+/**
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    height: 500vh;
+}
+
+button, a{
+    cursor: pointer;
+}
+
+p{
+    margin: 0px;
+}S**/
+
+@media (min-width:100px) {
+    .dm{
+        display: none;
+    }
+}
+
+@media (min-width:700px) {
+    .dm{
+        display: flex;
+    }
+}
+
+/* 基本樣式 */
+body {
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    background: url("https://images.pexels.com/photos/5088017/pexels-photo-5088017.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+    overflow-x: show;
+    overflow-y: show;
+}
+  
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 40px;
+    height: 18px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+  
+.menu-btn div {
+    height: 4px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+ 
+/**選單那三條線**/
+.menu-btn.open div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+  
+.menu-btn.open div:nth-child(2) {
+    opacity: 0;
+}
+  
+.menu-btn.open div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+} 
+  
+
+.blur-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(15px); /* 霧化 */
+    -webkit-backdrop-filter: blur(15px); 
+    z-index: 998;
+    display: none; 
+}
+  
+.blur-background.active {
+    display: block;
+}
+
+.side-menu {
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    right: -900px;
+    width: 300px;
+    height: 100%;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px); 
+    transition: all 0.5s ease; 
+    z-index: 999;
+    padding: 60px 20px;
+    border: none; /* 移除邊邊 */
+    box-shadow: none; 
+}
+  
+.side-menu.open {
+    right: 0;
+}
+  
+.side-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    margin: 20px 0;
+    display: block;
+    transition: color 0.3s;
+}
+  
+.side-menu a:hover {
+    color: #000000;
+}
+
+.slogan {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.slogan h1 {
+    font-size: 80px;
+    margin: 0;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.slogan p {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 16px;
+}
