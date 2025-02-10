@@ -14,3 +14,4 @@ blurBg.addEventListener('click', () => {
   sideMenu.classList.remove('open');
   blurBg.classList.remove('active');
 });
+
