@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './css/header.css';
 import './css/font.css';
@@ -14,6 +14,21 @@ function App() {
     
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     const closeMenu = () => setIsMenuOpen(false);
+
+    useEffect(() => {
+        switch (location.pathname) {
+            case '/':
+                document.title = '林園高中|115級班聯會網站';
+                break;
+            case '/job':
+                document.title = '職位介紹';
+                break;
+            case '/news':
+                document.title = '最新消息';
+                break;
+            default:
+                document.title = '林園高中|115級班聯會網站';
+        }
 
     return (
         <Router>
