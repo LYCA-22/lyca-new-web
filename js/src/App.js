@@ -29,6 +29,7 @@ function App() {
             default:
                 document.title = '林園高中|115級班聯會網站';
         }
+    }, [location.pathname]);
 
     return (
         <Router>
